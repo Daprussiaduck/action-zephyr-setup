@@ -48,7 +48,7 @@ inputs:
   manifest-file-url:
     description: Url of the west workspace manifest file
     required: false
-    default: https://github.com/Daprussiaduck/zephyr-workspace/main/west.yml
+    default: https://github.com/Daprussiaduck/zephyr-workspace
 
   sdk-version:
     description: Zephyr SDK version to use or "auto" to detect automatically
