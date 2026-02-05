@@ -116,7 +116,7 @@ runs:
       working-directory: ${{ inputs.base-path }}
       shell: bash
       run: |
-        west init -l ${{ inputs.app-path }} -m ${{ inputs.manifest-file-url }}
+        west init ${{ inputs.app-path }} -m ${{ inputs.manifest-file-url }}
         if [ -n "${{ inputs.west-group-filter }}" ]; then
           west config manifest.group-filter -- ${{ inputs.west-group-filter }}
         fi
