@@ -45,6 +45,11 @@ inputs:
     required: false
     default: west.yml
 
+  manifest-file-url:
+    description: Url of the west workspace manifest file
+    required: false
+    default: https://github.com/Daprussiaduck/zephyr-workspace/main/west.yml
+
   sdk-version:
     description: Zephyr SDK version to use or "auto" to detect automatically
     required: false
@@ -111,7 +116,7 @@ runs:
       working-directory: ${{ inputs.base-path }}
       shell: bash
       run: |
-        west init -l ${{ inputs.app-path }} --mf ${{ inputs.manifest-file-name }}
+        west init -l ${{ inputs.app-path }} --m ${{ inputs.manifest-file-url }}
         if [ -n "${{ inputs.west-group-filter }}" ]; then
           west config manifest.group-filter -- ${{ inputs.west-group-filter }}
         fi
